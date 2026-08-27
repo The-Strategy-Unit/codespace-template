@@ -21,14 +21,16 @@ This repository is set up so that when you create a codespace, GitHub will ask y
 
 1. Click the green **Use this template** button near the top of the page.
 2. Select **Create a new repository** from the dropdown.
-3. Follow the instructions on the **Create a new repository** page. Fill in "Repository Name". You can optionally add a "Description". Select if you want a "Public" or "Private" repo. Click the "Create repository" button.
+3. Follow the instructions on the **Create a new repository** page. Keep the repository name the same (`codespace-template`). Select if you want a "Public" or "Private" repo. Click the "Create repository" button.
+
+You should now have a copy of this repository at https://github.com/YOUR-GITHUB-USERNAME/codespace-template
 
 ## Step 2: Create your codespace
 
-The easiest way to start is to use one of the two links below — click the one for the language you want, and GitHub will take you straight to a page to create the right codespace. **Don't use the repository's plain green "Code" button for this** — it doesn't let you choose a language and may start the wrong one.
- 
-- 🅁 **[Open an R codespace](https://codespaces.new/The-Strategy-Unit/codespace-template?devcontainer_path=.devcontainer/r-rstudio/devcontainer.json)**
-- 🐍 **[Open a Python codespace](https://codespaces.new/The-Strategy-Unit/codespace-template?devcontainer_path=.devcontainer/python-uv/devcontainer.json)**
+The easiest way to start is to use one of the two links below. ⚠️ It is important that you replace the value in YOUR-GITHUB-USERNAME with your actual GitHub username!
+
+- 🅁 **Open an R codespace**: https://codespaces.new/YOUR-GITHUB-USERNAME/codespace-template?devcontainer_path=.devcontainer/r-rstudio/devcontainer.json
+- 🐍 **Open a Python codespace**: https://codespaces.new/YOUR-GITHUB-USERNAME/codespace-template?devcontainer_path=.devcontainer/python-uv/devcontainer.json
  
 Clicking a link will take you to a "Create codespace" page with the correct configuration already selected. Click **Create codespace** to continue. GitHub will now build your environment — this can take a few minutes the first time, so feel free to make a cup of tea. Later codespaces will start faster.
  
