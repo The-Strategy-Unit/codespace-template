@@ -1,5 +1,5 @@
 {
-  "name": "R (rocker/r-ver base)",
+  "name": "R (rocker/r-ver + RStudio)",
   "image": "ghcr.io/rocker-org/devcontainer/r-ver:4.4",
   "features": {
     "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
