@@ -25,16 +25,24 @@ This repository is set up so that when you create a codespace, GitHub will ask y
 
 ## Step 2: Create your codespace
 
-1. At the top of your new repository's GitHub page, click the green **`<> Code`** button.
-2. Select the **Codespaces** tab.
-3. Click **Create codespace on main**.
-   - If you want more control over which environment you get, instead click the **`...`** (three dots) next to the `+` button, or look for **"Configure and create codespace"**. This lets you pick between the two options below before it starts.
-4. You'll be shown a choice of two configurations:
+The easiest way to start is to use one of the two links below — click the one for the language you want, and GitHub will take you straight to a page to create the right codespace. **Don't use the repository's plain green "Code" button for this** — it doesn't let you choose a language and may start the wrong one.
+ 
+- 🅁 **[Open an R codespace](https://codespaces.new/The-Strategy-Unit/codespace-template?devcontainer_path=.devcontainer/r-rstudio/devcontainer.json)**
+- 🐍 **[Open a Python codespace](https://codespaces.new/The-Strategy-Unit/codespace-template?devcontainer_path=.devcontainer/python-uv/devcontainer.json)**
+ 
+Clicking a link will take you to a "Create codespace" page with the correct configuration already selected. Click **Create codespace** to continue. GitHub will now build your environment — this can take a few minutes the first time, so feel free to make a cup of tea. Later codespaces will start faster.
+ 
+### Alternative: creating a codespace manually
+ 
+If you'd rather use the repository's **`<> Code`** button instead of the links above:
+ 
+1. Click the green **`<> Code`** button, then select the **Codespaces** tab.
+2. **Do not click "Create codespace on main"** — this quick option skips the language choice and may create the wrong environment.
+3. Instead, click the **`...`** (three dots) in the top corner of the panel, and choose **"New with options..."**.
+4. Under **Dev container configuration**, choose either:
    - **R (rocker/r-ver + RStudio)**
    - **Python (uv)**
-   Pick whichever one matches what you want to work in.
-5. Click **Create**. GitHub will now build your environment. This can take a few minutes the first time — feel free to make a cup of tea. Later codespaces will start faster.
----
+5. Click **Create codespace**.
  
 ## Step 3a: Using the R environment
  
