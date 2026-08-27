@@ -17,9 +17,15 @@ This repository is set up so that when you create a codespace, GitHub will ask y
  
 ---
  
-## Step 1: Create your codespace
- 
-1. At the top of this repository's GitHub page, click the green **`<> Code`** button.
+## Step 1: Copy this repository to your own account
+
+1. Click the green **Use this template** button near the top of the page.
+2. Select **Create a new repository** from the dropdown.
+3. Follow the instructions on the **Create a new repository** page. Fill in "Repository Name". You can optionally add a "Description". Select if you want a "Public" or "Private" repo. Click the "Create repository" button.
+
+## Step 2: Create your codespace
+
+1. At the top of your new repository's GitHub page, click the green **`<> Code`** button.
 2. Select the **Codespaces** tab.
 3. Click **Create codespace on main**.
    - If you want more control over which environment you get, instead click the **`...`** (three dots) next to the `+` button, or look for **"Configure and create codespace"**. This lets you pick between the two options below before it starts.
@@ -30,7 +36,7 @@ This repository is set up so that when you create a codespace, GitHub will ask y
 5. Click **Create**. GitHub will now build your environment. This can take a few minutes the first time — feel free to make a cup of tea. Later codespaces will start faster.
 ---
  
-## Step 2: Using the R environment
+## Step 3a: Using the R environment
  
 If you chose **R (rocker/r-ver + RStudio)**:
  
@@ -46,7 +52,7 @@ If you chose **R (rocker/r-ver + RStudio)**:
  
 ---
  
-## Step 3: Using the Python environment
+## Step 3b: Using the Python environment
  
 If you chose **Python (uv)**:
  
