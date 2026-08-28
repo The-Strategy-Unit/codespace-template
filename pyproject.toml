@@ -1,0 +1,10 @@
+[project]
+name = "codespace-template"
+version = "0.1.0"
+description = "Minimal template for a Python project in GitHub Codespaces"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyter>=1.1.1",
+    "pandas>=3.0.5",
+]

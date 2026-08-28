@@ -1,108 +1,117 @@
-# R, RStudio, Codespace starter template
+# R & Python Codespaces Template
+ 
+This repository is a starting point for working in either **R** or **Python**, using [GitHub Codespaces](https://github.com/features/codespaces) — a way to code in your browser (or VS Code) without installing anything on your own computer.
 
-This template can be used to create repos that uses GitHub Codespaces to run R and RStudio. That way people can write and run R code without installing software on their computer.
+ 
+You don't need to have R, Python, RStudio, or any package managers installed on your machine. Everything runs in the cloud, inside a ready-made environment.
+ 
+You get to choose which language you want to work in each time you start a new codespace.
+ 
+---
+ 
+## What is a Codespace?
+ 
+A **codespace** is a temporary, cloud-based computer that GitHub creates for you, pre-installed with everything needed for a project. Think of it as a fresh laptop that already has all the right software on it, accessible through your web browser.
+ 
+This repository is set up so that when you create a codespace, GitHub will ask you **which environment you want**: R or Python.
+ 
+---
+ 
+## Step 1: Copy this repository to your own account
 
-## Features
-- Configures a codespace that has R and RStudio
-- Installs R packages tidyverse, lubridate (dates), here (file paths), sf (vector geospatial files), and mapview (interactive maps)
-- Install RStudio server so people can use RStudio in codespace
-- Sets up a basic folder structure
+1. Click the green **Use this template** button near the top of the page.
+2. Select **Create a new repository** from the dropdown.
+3. Follow the instructions on the **Create a new repository** page. Keep the repository name the same (`codespace-template`). Select if you want a "Public" or "Private" repo. Click the "Create repository" button.
 
+You should now have a copy of this repository at https://github.com/YOUR-GITHUB-USERNAME/codespace-template
+
+## Step 2: Create your codespace
+
+The easiest way to start is to use one of the two links below. ⚠️ It is important that you replace the value in YOUR-GITHUB-USERNAME with your actual GitHub username!
+
+- 🅁 **Open an R codespace**: https://codespaces.new/YOUR-GITHUB-USERNAME/codespace-template?devcontainer_path=.devcontainer/r-rstudio/devcontainer.json
+- 🐍 **Open a Python codespace**: https://codespaces.new/YOUR-GITHUB-USERNAME/codespace-template?devcontainer_path=.devcontainer/python-uv/devcontainer.json
+ 
+Clicking a link will take you to a "Create codespace" page with the correct configuration already selected. Click **Create codespace** to continue. GitHub will now build your environment — this can take a few minutes the first time, so feel free to make a cup of tea. Later codespaces will start faster.
+ 
+### Alternative: creating a codespace manually
+ 
+If you'd rather use the repository's **`<> Code`** button instead of the links above:
+ 
+1. Click the green **`<> Code`** button, then select the **Codespaces** tab.
+2. **Do not click "Create codespace on main"** — this quick option skips the language choice and may create the wrong environment.
+3. Instead, click the **`...`** (three dots) in the top corner of the panel, and choose **"New with options..."**.
+4. Under **Dev container configuration**, choose either:
+   - **R (rocker/r-ver + RStudio)**
+   - **Python (uv)**
+5. Click **Create codespace**.
+ 
+## Step 3a: Using the R environment
+ 
+If you chose **R (rocker/r-ver + RStudio)**:
+ 
+- Once the codespace has finished building, look for a notification or a **"Ports"** tab in VS Code, and find the port labeled **RStudio IDE** (port `8787`).
+- Click the little globe/browser icon next to it, or open the forwarded address, to open **RStudio** in a new browser tab.
+- You'll now have a full RStudio interface, with the following R packages already installed and ready to use:
+  - `tidyverse`
+  - `lubridate`
+  - `here`
+  - `languageserver`
+- You can write and run R code directly in RStudio's console, or create `.R` script files.
+**No installation needed** — R, RStudio, and these packages are already set up for you.
+ 
+---
+ 
+## Step 3b: Using the Python environment
+ 
+If you chose **Python (uv)**:
+ 
+- Once the codespace has finished building, open a terminal in VS Code (menu: **Terminal → New Terminal**, or press `` Ctrl+` ``).
+- This environment uses a tool called **[uv](https://docs.astral.sh/uv/)** to manage Python and its packages. You don't need to install Python yourself — uv takes care of it.
+- To check everything is working, type:
 ```
-project_folder
-│
-└── data
-│    └── cleaned
-│    └── raw
-│
-└─── results
-│
-└── scripts
-│
-└── project.Rproj
+  uv --version
 ```
-
-To change the list of R packages, edit `.devcontainer/devcontainer.json`,
-
-```json
-"ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
-  "packages": "tidyverse,lubridate,here,sf,mapview,languageserver"
-},
+- To run a Python project in this repository, type:
 ```
+  uv sync
+```
+  This installs the exact Python version and packages the project needs.
+- To run a Python script, use:
+```
+  uv run python your_script.py
+```
+ 
+You'll write and edit your Python files directly in the VS Code editor in your browser, and run them using the terminal.
+ 
+---
+ 
+## Which one should I pick?
+ 
+- Choose **R** if you're doing statistics, data analysis with the tidyverse, or want an RStudio-style interface.
+- Choose **Python** if you're writing Python scripts, doing general programming, or want a lightweight, fast-to-set-up environment.
+You can always delete your codespace and start a new one with the other language — nothing you do in one codespace affects your ability to create the other.
+ 
+---
+ 
+## Stopping and deleting your codespace
+ 
+Codespaces don't run forever, and they use up free monthly quota, so it's good practice to stop them when you're done:
+ 
+1. Go to [github.com/codespaces](https://github.com/codespaces) to see all your active codespaces.
+2. Click the **`...`** next to your codespace and choose **Stop codespace** (pauses it — you can resume later) or **Delete** (removes it completely).
+A codespace will also stop automatically after a period of inactivity.
+ 
+---
+ 
+## Troubleshooting
+ 
+- **Nothing happens when I click Create codespace** — try refreshing the page, or check you're signed in to GitHub.
+- **I don't see a choice between R and Python** — use "Configure and create codespace" instead of the default quick-create button (see Step 1).
+- **RStudio tab won't open** — check the **Ports** panel in VS Code and make sure port `8787` shows as forwarded; click it again to reopen the tab.
+- **`uv: command not found`** — close and reopen the terminal, as the codespace may still be finishing setup.
+If you're stuck, it's worth pasting the exact error message into a search engine — most Codespaces issues are common and well documented.
+ 
+ ## Acknowledgements
 
-## Intial setup
-
-### Create a new respository
-
-1. Click the green "Use this template" button near the top of the page.
-
-2. Select "Create a new repository" from the dropdown.
-
-3. Follow the instructions on the "Create a new repository" page. Fill in "Repository Name". You can optionally add a "Description". Select if you want a "Public" or "Private" repo. Click "Create repository" button.
-
-### Create to a Codespace
-
-1. On your new repo's homepage, click the green "Code" button.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/coding-after-workshop/code-button.png?raw=true)
-
-2. Click "Codespaces" tab.
-
-3.  a\. If there are no Codespaces for the repo, click the green "Create codespace on main" button. The browser window loads the Codespace.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/coding-after-workshop/create-codespace-main.png?raw=true)
-
-    b\. If a Codespace exists for the repo, click the three dots in the "On current branch" section.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/coding-after-workshop/existing-codespace.png?raw=true)
-
-    Click "Open in Browser" in the popup window. This will restart an existing Codespace in a browser tab. It will take a few minutes to download the R packages and build a codespace.
-
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/building-codespace.png?raw=true)
-
-### Start RStudio.
-
-1. By default Codespace uses Visual Studio Codes as the code editor. We ant to use RStudio to edit R code. We need to start RStudio. Click on the "PORTS" tab at the bottom.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/finish-building.png?raw=true)
-
-2. In the PORTS tab, hover over the item named RStudio or 8787. Click on the middle globe icon to start RStudio in a new browser tab.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/rstudio-port.png?raw=true)
-
-3. Now you are ready to write and run R code using RStudio. Even though we won't use Visual Studio Code to write R code, keep the tab for Visual Studio Code open.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/rstudio.png?raw=true)
-
-### Stop RStudio and Codespace
-
-After you finish your work for the day, you need to stop RStudio, push your code changes to your repository, and stop Codespace. If you don't stop Codespace, it will continue to run and use up your free 60 hours a month.
-
-1. To stop R, click the orange circle in the upper right of RStudio.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/stop_R.png?raw=true)
-
-2. You'll see a message "R Session Ended". Close the browser tab for RStudio.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/r_session_ended.png?raw=true)
-
-3. Go to the Visual Studio Code browser tab. Click "bash". Click "TERMINAL".
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/bash.png?raw=true)
-
-4. To save the changed files to your repository, type "bash scripts/save_files.sh" after the \$, and hit return/enter.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/bash_save_files.png?raw=true)
-
-5. To stop Codespace, click the blue area in the lower left corner of Visual Studio Code.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/stop_codespace_button.png?raw=true)
-
-6. A popup window will appear. Click "Stop Current Codespace".
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/setup/stop_codespace.png?raw=true)
-
-7. After a little while, you will see a "Codespace is stopped" message. You can now close the browser tab.
-
-    ![](https://github.com/wykhuh/after-inaturalist-r/blob/main/lessons/images/codespace-stop/Codespace-stopped.png?raw=true)
+ The R codespace container and the layout of this repository was based on https://github.com/wykhuh/r-rstudio-codespace. Claude Code was used to advise on the creation of the Python codespace container and write the README.
