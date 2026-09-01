@@ -10,7 +10,6 @@
   },
   /* setup RStudio server */
   "postAttachCommand": {
-    "timer": "python3 scripts/timer.py",
     "rstudio-start": "rserver"
   },
   "forwardPorts": [8787],
