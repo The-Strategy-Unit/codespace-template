@@ -5,7 +5,7 @@
     "dockerfile": "Dockerfile"
   },
 
-  "postCreateCommand": "uv sync --locked",
+  "postCreateCommand": "echo '🐍📦 Installing Python and dependencies...' && uv sync --locked && echo '✅ Python dependencies installed successfully! Your codespace is ready'",
 
   "customizations": {
     "vscode": {
