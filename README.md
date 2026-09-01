@@ -19,7 +19,7 @@ This repository is set up so that when you create a codespace, GitHub will ask y
  
 ## Step 1: Copy this repository to your own account
 
-1. Click the green **Use this template** button near the top of the page.
+1. Click the **Use this template** button near the top of the page.
 2. Select **Create a new repository** from the dropdown.
 3. Follow the instructions on the **Create a new repository** page. Keep the repository name the same (`codespace-template`). Select if you want a "Public" or "Private" repo. Click the "Create repository" button.
 
@@ -38,20 +38,29 @@ Clicking a link will take you to a "Create codespace" page with the correct conf
  
 If you'd rather use the repository's **`<> Code`** button instead of the links above:
  
-1. Click the green **`<> Code`** button, then select the **Codespaces** tab.
+1. Click the **`<> Code`** button, then select the **Codespaces** tab.
 2. **Do not click "Create codespace on main"** — this quick option skips the language choice and may create the wrong environment.
 3. Instead, click the **`...`** (three dots) in the top corner of the panel, and choose **"New with options..."**.
 4. Under **Dev container configuration**, choose either:
    - **R (rocker/r-ver + RStudio)**
    - **Python (uv)**
 5. Click **Create codespace**.
+
+## Waiting for your codespace to build
+
+⚠️⌚ It can take 5-15 minutes for your codespace to build. Some things to watch out for:
+
+- Look at the bottom left of your screen. There will be a message whilst it's starting up: `Opening Remote...` initially.
+- If a pop-up appears asking "Do you trust the authors of the files in this folder?", click on `Trust folder and continue`.
+- The `Opening Remote...` message in the bottom left should change to `>< Codespaces` eventually.
+Click on `>< Codespaces:` There will usually be a randomly generated quirky name for your Codespace. Then, select `View Creation Log` from the dropdown that appears at the top. Scroll ALL THE WAY TO THE BOTTOM. You should see the message `Finished configuring codespace.` at the bottom of the logs if everything is completed.
  
 ## Step 3a: Using the R environment
  
 If you chose **R (rocker/r-ver + RStudio)**:
  
 - Once the codespace has finished building, look for a notification or a **"Ports"** tab in VS Code, and find the port labeled **RStudio IDE** (port `8787`).
-- Click the little globe/browser icon next to it, or open the forwarded address, to open **RStudio** in a new browser tab.
+- Click the little globe/browser icon next to it, or open the forwarded address, to open **RStudio** in a new browser tab. You may have to close and reopen the tab 4-5 times before it loads properly. Don't give up if you get a localhost not found or 502 error initially.
 - You'll now have a full RStudio interface, with the following R packages already installed and ready to use:
   - `tidyverse`
   - `lubridate`
@@ -66,6 +75,7 @@ If you chose **R (rocker/r-ver + RStudio)**:
  
 If you chose **Python (uv)**:
  
+- If a pop-up appears saying that Python is not installed, asking you if you would like to install it, press `Cancel`. Python should be installed behind the scenes.
 - Once the codespace has finished building, open a terminal in VS Code (menu: **Terminal → New Terminal**, or press `` Ctrl+` ``).
 - This environment uses a tool called **[uv](https://docs.astral.sh/uv/)** to manage Python and its packages. You don't need to install Python yourself — uv takes care of it.
 - To check everything is working, type:

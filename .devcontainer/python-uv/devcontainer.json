@@ -1,10 +1,12 @@
 {
   "name": "Python (uv)",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "containerEnv": {
-    "UV_LINK_MODE": "copy"
+
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && uv sync",
+
+  "postCreateCommand": "echo '🐍📦 Installing Python and dependencies...' && uv sync --locked && echo '✅ Python dependencies installed successfully! Your codespace is ready'",
+
   "customizations": {
     "vscode": {
       "extensions": [
@@ -13,8 +15,6 @@
       ]
     }
   },
-  "remoteEnv": {
-    "PATH": "${containerEnv:HOME}/.local/bin:${containerEnv:PATH}"
-  },
+
   "forwardPorts": []
 }
