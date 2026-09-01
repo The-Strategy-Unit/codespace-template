@@ -1,16 +1,11 @@
 {
   "name": "Python (uv)",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 
-  "features": {
-    "ghcr.io/astral-sh/uv:latest": {}
+  "build": {
+    "dockerfile": "Dockerfile"
   },
 
-  "containerEnv": {
-    "UV_LINK_MODE": "copy"
-  },
-
-  "postCreateCommand": "uv sync",
+  "postCreateCommand": "uv sync --locked",
 
   "customizations": {
     "vscode": {
